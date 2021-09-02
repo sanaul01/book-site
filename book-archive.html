@@ -12,13 +12,16 @@
         <h2 class="text-center text-primary">Find Book</h2>
         <!-- Search Box -->
         <div class="input-group mb-3 w-50 mx-auto">
-            <input id="input-text" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input id="input-text" type="text" class="form-control" placeholder="Search Books" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button onclick="loadData()" class="btn btn-outline-success" type="button" id="button-addon2">Button</button>
           </div>
 
     </header>
     <main>
-        <section class="container">
+        <div class="w-50 mx-auto bg-dark md-4 rounded">
+            <h2 id="books-numbers" class="w-50 mx-auto text-white"></h2>
+        </div>
+        <section class="container mt-4">
             <div>
                 <div id="book-field" class="row row-cols-1 row-cols-md-3 g-4">   
                 </div>
