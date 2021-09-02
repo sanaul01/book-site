@@ -6,28 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Archive</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        .spinners{
+            display: none;
+        }
+        .error{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h2 class="text-center text-primary">Find Book</h2>
+        <h2 class="text-center text-warning bg-secondary">Find Book</h2>
         <!-- Search Box -->
         <div class="input-group mb-3 w-50 mx-auto">
             <input id="input-text" type="text" class="form-control" placeholder="Search Books" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button onclick="loadData()" class="btn btn-outline-success" type="button" id="button-addon2">Button</button>
+            <button onclick="searchData()" class="btn btn-outline-success" type="button" id="button-addon2">Search</button>
           </div>
 
     </header>
     <main>
-        <div class="w-50 mx-auto bg-dark md-4 rounded">
-            <h2 id="books-numbers" class="w-50 mx-auto text-white"></h2>
-        </div>
-        <section class="container mt-4">
-            <div>
-                <div id="book-field" class="row row-cols-1 row-cols-md-3 g-4">   
+        
+            <!-- Spinner -->
+            <div class="spinners" id="spinner">
+                <div class="w-25 mx-auto px-4">
+                    <div class="spinner-border text-dark" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
                 </div>
             </div>
+            <div class="error" id="empty-input">
+                <h2 class="text-center text-success">Search button is empty</h2>
+            </div>
+        <section id="display-field">
+            
+            <div class="w-50 mx-auto bg-dark md-4 rounded">
+                <h2 id="books-numbers" class="w-50 mx-auto text-warning"></h2>
+            </div>
+            <section class="container mt-4">
+                <div>
+                    <div id="book-field" class="row row-cols-1 row-cols-md-3 g-4">   
+                    </div>
+                </div>
+            </section>
+            
+            <div class="error my-4" id="errors">
+                <h2 class="text-center text-success">No result found</h2>
+            </div>
+    
         </section>
-
+        
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
