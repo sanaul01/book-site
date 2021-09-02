@@ -1,4 +1,3 @@
-
 // error handeling
 
 const toggleSpinner = displayStyle =>{
